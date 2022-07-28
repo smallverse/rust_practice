@@ -1,6 +1,6 @@
-[cross 基于 docker 构建](https://github.com/cross-rs/cross)
+# build use cargo or [cross](https://github.com/cross-rs/cross)
 
-## Win11 amd64 构建
+## Win11 amd64 build
 ### windows
 ```shell
 cargo build --release --target=x86_64-pc-windows-msvc 
@@ -16,7 +16,7 @@ cross build --release --target=armv7-linux-androideabi
 
 ```
 ---
-## MacOS(M1) arrach64 构建
+## MacOS(M1) arrach64 build
 ### MacOS
 ```shell
 #m1 arm64 macos
