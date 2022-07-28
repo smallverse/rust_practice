@@ -1,0 +1,33 @@
+[cross 基于 docker 构建](https://github.com/cross-rs/cross)
+
+## Win11 amd64 构建
+### windows
+```shell
+cargo build --release --target=x86_64-pc-windows-msvc 
+```
+### Android
+```shell
+#arm64
+cross build --release --target=aarch64-linux-android 
+#arm32
+cross build --release --target=arm-linux-androideabi
+#arm32
+cross build --release --target=armv7-linux-androideabi
+
+```
+---
+## MacOS(M1) arrach64 构建
+### MacOS
+```shell
+#m1 arm64 macos
+cargo build --release --target=aarch64-apple-darwin
+#amd64 macos
+cargo build --release --target=x86_64-apple-darwin
+```
+
+
+### IOS
+```shell
+#arm64 ios
+cargo build --release --target=aarch64-apple-ios
+```
