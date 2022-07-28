@@ -1,0 +1,4 @@
+[workspace]
+members = [
+    "cross_platform_lib",
+]
