@@ -1,4 +1,7 @@
 use crate::ffi::{ObjInfo, Quaternion};
+use std::ffi::{CStr, CString};
+use std::iter;
+use std::os::raw::c_char;
 
 #[cxx::bridge(namespace = "com::cross_platform_lib")]
 mod ffi {
@@ -24,6 +27,10 @@ mod ffi {
 }
 
 /***************************start*****************************/
+#[no_mangle]
+pub extern "C" fn add(left: usize, right: usize) -> usize {
+    left + right
+}
 
 #[no_mangle]
 pub extern "C" fn gen_quaternion(x: f32, y: f32, z: f32, w: f32) -> Quaternion {
@@ -41,11 +48,13 @@ pub extern "C" fn gen_obj_info_str(name: String, age: f32, desc: String) -> Stri
     serde_json::to_string(&ob).unwrap()
 }
 
-#[no_mangle]
-pub extern "C" fn add(left: usize, right: usize) -> usize {
-    left + right
-}
 /***************************end*****************************/
+fn c_char_to_string(name: *const c_char) -> String {
+    let c_str: &CStr = unsafe { CStr::from_ptr(name) };
+    let str_slice: &str = c_str.to_str().unwrap();
+    let str_buf: String = str_slice.to_owned(); // if necessary
+    str_buf
+}
 
 #[cfg(test)]
 mod tests {
