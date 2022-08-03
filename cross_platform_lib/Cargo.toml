@@ -6,7 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [lib]
 name = "cross_platform_lib"
-#cdylib rust 向其他语言提供c-abi
+#cdylib rust c-abi
 crate-type = ["cdylib","staticlib"]
 [dependencies]
 cxx = "1.0.71"
