@@ -4,7 +4,7 @@
 
 [for cross,Speed up the download of container images via DockerHub](https://github.com/smallverse/imageverse)
 
-## Win11 amd64 build
+## 1 Win11 amd64 build for Win & Android 
 ### windows
 ```shell
 cargo build --release --target=x86_64-pc-windows-msvc 
@@ -20,7 +20,7 @@ cross build --release --target=armv7-linux-androideabi
 
 ```
 ---
-## MacOS(M1) arrach64 build
+## 2 MacOS(M1) arrach64 build for MacOS & IOS
 ### MacOS
 ```shell
 #m1 arm64 macos
@@ -36,4 +36,7 @@ cargo build --release --target=x86_64-apple-darwin
 cargo build --release --target=aarch64-apple-ios
 ```
 ---
-Using the practice：https://github.com/smallverse/ue4_test 
+
+## 3 build for Linux
+> The linux build is simple enough for you to try, so I won't go over it here
+
