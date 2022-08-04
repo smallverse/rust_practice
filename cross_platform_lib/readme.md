@@ -20,7 +20,7 @@ cross build --release --target=armv7-linux-androideabi
 
 ```
 ---
-## 2 MacOS(M1) arrach64 build for MacOS & IOS
+## 2 MacOS(M1 arrach64)  build for MacOS & IOS
 ### MacOS
 ```shell
 #m1 arm64 macos
