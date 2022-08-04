@@ -1,8 +1,9 @@
 # build use cargo or [cross](https://github.com/cross-rs/cross) ,FFI By [cxx](https://github.com/dtolnay/cxx))
+> No explicit extern "C", leave it to the cxx framework
 
-[UE4 3rd plugin Test](https://github.com/smallverse/ue4_test), The same is true for Unity 3D, but you need to build it yourself, which is easier than UE4
+> [UE4 3rd plugin Test](https://github.com/smallverse/ue4_test), The same is true for Unity 3D, but you need to build it yourself, which is easier than UE4
 
-[for cross,Speed up the download of container images via DockerHub](https://github.com/smallverse/imageverse)
+> [for cross,Speed up the download of container images via DockerHub](https://github.com/smallverse/imageverse)
 
 ## 1 Win11 amd64 build for Win & Android 
 ### windows

@@ -45,20 +45,3 @@ pub fn gen_obj_info_str(name: String, age: f32, desc: String) -> String {
 }
 
 /***************************end*****************************/
-fn c_char_to_string(name: *const c_char) -> String {
-    let c_str: &CStr = unsafe { CStr::from_ptr(name) };
-    let str_slice: &str = c_str.to_str().unwrap();
-    let str_buf: String = str_slice.to_owned(); // if necessary
-    str_buf
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
