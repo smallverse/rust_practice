@@ -1,0 +1,1 @@
+C:/resources/zhaijf/rust_practice/target/x86_64-pc-windows-msvc/release/build/cross_platform_lib-be130cfc006d6cd7/out/cxxbridge/sources/cross_platform_lib/src/lib.rs.cc

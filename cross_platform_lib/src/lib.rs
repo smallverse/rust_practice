@@ -1,7 +1,4 @@
 use crate::ffi::{ObjInfo, Quaternion};
-use std::ffi::{CStr, CString};
-use std::iter;
-use std::os::raw::c_char;
 
 #[cxx::bridge(namespace = "com::cross_platform_lib")]
 mod ffi {
