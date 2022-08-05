@@ -1,0 +1,19 @@
+[package]
+name = "cross_platform_lib_jni"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "cross_platform_lib_jni"
+#cdylib rust 向其他语言提供c-abi
+crate-type = ["cdylib","staticlib"]
+
+[dependencies]
+cxx = "1.0.71"
+jni ="0.19.0"
+serde = {version = "1.0", features = ["derive"]}
+serde_json = {version = "1.0"}
+
+[build-dependencies]
+cxx-build = "1.0.71"

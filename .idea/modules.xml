@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/cross_platform_lib/cross_platform_lib.iml" filepath="$PROJECT_DIR$/cross_platform_lib/cross_platform_lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/cross_platform_lib_by_ffi/cross_platform_lib_by_ffi.iml" filepath="$PROJECT_DIR$/cross_platform_lib_by_ffi/cross_platform_lib_by_ffi.iml" />
       <module fileurl="file://$PROJECT_DIR$/cross_platform_lib_ffi/cross_platform_lib_ffi.iml" filepath="$PROJECT_DIR$/cross_platform_lib_ffi/cross_platform_lib_ffi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cross_platform_lib_jni/cross_platform_lib_jni.iml" filepath="$PROJECT_DIR$/cross_platform_lib_jni/cross_platform_lib_jni.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/rust_practice.iml" filepath="$PROJECT_DIR$/.idea/rust_practice.iml" />
     </modules>
   </component>
