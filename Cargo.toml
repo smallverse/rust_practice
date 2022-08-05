@@ -1,5 +1,6 @@
 [workspace]
 members = [
     "cross_platform_lib",
+    "cross_platform_lib_ffi"
 
 ]

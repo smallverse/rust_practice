@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/cross_platform_lib/cross_platform_lib.iml" filepath="$PROJECT_DIR$/cross_platform_lib/cross_platform_lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cross_platform_lib_by_ffi/cross_platform_lib_by_ffi.iml" filepath="$PROJECT_DIR$/cross_platform_lib_by_ffi/cross_platform_lib_by_ffi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cross_platform_lib_ffi/cross_platform_lib_ffi.iml" filepath="$PROJECT_DIR$/cross_platform_lib_ffi/cross_platform_lib_ffi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/rust_practice.iml" filepath="$PROJECT_DIR$/.idea/rust_practice.iml" />
+    </modules>
+  </component>
+</project>
