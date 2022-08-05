@@ -24,19 +24,20 @@ mod ffi {
 }
 
 /***************************start*****************************/
-pub fn add(left: usize, right: usize) -> usize {
+#[no_mangle]
+pub extern "C" fn add(left: usize, right: usize) -> usize {
     left + right
 }
-
-pub fn gen_quaternion(x: f32, y: f32, z: f32, w: f32) -> Quaternion {
+#[no_mangle]
+pub extern "C" fn gen_quaternion(x: f32, y: f32, z: f32, w: f32) -> Quaternion {
     Quaternion { x, y, z, w }
 }
-
-pub fn gen_obj_info(name: String, age: f32, desc: String) -> ObjInfo {
+#[no_mangle]
+pub extern "C" fn gen_obj_info(name: String, age: f32, desc: String) -> ObjInfo {
     ObjInfo { name, age, desc }
 }
-
-pub fn gen_obj_info_str(name: String, age: f32, desc: String) -> String {
+#[no_mangle]
+pub extern "C" fn gen_obj_info_str(name: String, age: f32, desc: String) -> String {
     let ob = ObjInfo { name, age, desc };
     serde_json::to_string(&ob).unwrap()
 }
