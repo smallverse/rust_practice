@@ -10,10 +10,7 @@ name = "cross_platform_lib_jni"
 crate-type = ["cdylib","staticlib"]
 
 [dependencies]
-cxx = "1.0.71"
 jni ="0.19.0"
 serde = {version = "1.0", features = ["derive"]}
 serde_json = {version = "1.0"}
 
-[build-dependencies]
-cxx-build = "1.0.71"

@@ -4,17 +4,15 @@ use jni::{
     sys::{jfloat, jint, jstring},
     JNIEnv,
 };
-use crate::ffi::Quaternion;
+use serde::{Serialize, Deserialize};
 
-#[cxx::bridge(namespace = "com::cross_platform_lib_jni")]
-mod ffi {
-    #[derive(Debug, Serialize, Deserialize)]
-    pub struct Quaternion {
-        pub x: f32,
-        pub y: f32,
-        pub z: f32,
-        pub w: f32,
-    }
+#[repr(C)]
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Quaternion {
+    pub x: f32,
+    pub y: f32,
+    pub z: f32,
+    pub w: f32,
 }
 
 /*

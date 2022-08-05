@@ -7,6 +7,7 @@
 
 > [for cross,Speed up the download of container images via DockerHub](https://github.com/smallverse/imageverse)
 
+> https://serde.rs/derive.html
 ## 1 Win11 amd64 build for Win & Android 
 ### windows
 ```shell

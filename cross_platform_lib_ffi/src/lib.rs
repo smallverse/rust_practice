@@ -1,3 +1,4 @@
+use serde::{Serialize, Deserialize};
 use std::ffi::CString;
 use std::os::raw::c_char;
 
@@ -9,14 +10,14 @@ pub struct Quaternion {
     pub z: f32,
     pub w: f32,
 }
-
-#[repr(C)]
-#[derive(Debug, Serialize, Deserialize)]
-pub struct ObjInfo {
-    pub name: *const c_char,
-    pub age: f32,
-    pub desc: *const c_char,
-}
+//
+// #[repr(C)]
+// #[derive(Debug, Serialize, Deserialize)]
+// pub struct ObjInfo {
+//     pub name: *const c_char,
+//     pub age: f32,
+//     pub desc: *const c_char,
+// }
 
 /***************************start*****************************/
 #[no_mangle]
@@ -27,19 +28,20 @@ pub extern "C" fn add(left: usize, right: usize) -> usize {
 pub extern "C" fn gen_quaternion(x: f32, y: f32, z: f32, w: f32) -> Quaternion {
     Quaternion { x, y, z, w }
 }
+
 #[no_mangle]
 pub extern "C" fn gen_quaternion_str(x: f32, y: f32, z: f32, w: f32) -> *mut c_char {
     let q = Quaternion { x, y, z, w };
-    let str_json = serde_json::to_string(&q);
-    // let str_json = serde_json::to_string(&q).unwrap();
+    let str_json = serde_json::to_string(&q).unwrap();
     let c_str = CString::new(str_json).unwrap();
     c_str.into_raw()
 }
 
-#[no_mangle]
-pub extern "C" fn gen_obj_info(name:  *const c_char, age: f32, desc:  *const c_char) -> ObjInfo {
-    ObjInfo { name, age, desc }
-}
+//
+// #[no_mangle]
+// pub extern "C" fn gen_obj_info(name:  *const c_char, age: f32, desc:  *const c_char) -> ObjInfo {
+//     ObjInfo { name, age, desc }
+// }
 // #[no_mangle]
 // pub extern "C" fn gen_obj_info(name: CString, age: f32, desc: CString) -> *mut ObjInfo {
 //     let obj=ObjInfo { name, age, desc };
