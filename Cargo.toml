@@ -3,6 +3,6 @@ members = [
     "cross_platform_lib",
     "cross_platform_lib_ffi",
     "cross_platform_lib_jni",
-    "rust_wasm_test",
+    "cross_rust_wasm",
     "test_bin",
 ]

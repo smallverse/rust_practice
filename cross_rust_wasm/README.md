@@ -1,11 +1,11 @@
-# rust_wasm
-## 1 about 
+# cross_rust_wasm
+## 1 about
 
-https://www.npmjs.com/package/rust_wasm
+https://www.npmjs.com/package/cross_rust_wasm
 
 ---
 
-## 2 use rust_wasm
+## 2 use cross_rust_wasm
 nodejs：
 ```shell
 npm i rust_wasm@nodejs
