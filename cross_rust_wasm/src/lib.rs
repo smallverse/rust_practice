@@ -12,7 +12,7 @@ use wasm_bindgen::prelude::*;
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
 #[wasm_bindgen]
-extern {
+extern "C" {
     fn alert(s: &str);
 }
 
@@ -31,16 +31,9 @@ pub struct PubQuaternion {
     pub w: f32,
 }
 
-#[wasm_bindgen]
 #[repr(C)]
-pub struct PubObjInfo {
-    pub name: *const c_char,
-    pub age: f32,
-    pub desc: *const c_char,
-}
-
 #[derive(Debug, Serialize, Deserialize)]
-struct ObjInfo {
+struct PubObjInfo {
     pub name: String,
     pub age: f32,
     pub desc: String,
@@ -61,61 +54,16 @@ pub extern "C" fn gen_quaternion(x: f32, y: f32, z: f32, w: f32) -> PubQuaternio
 
 #[wasm_bindgen]
 #[no_mangle]
-pub extern "C" fn gen_quaternion_str(x: f32, y: f32, z: f32, w: f32) -> *mut c_char {
+pub extern "C" fn gen_quaternion_str(x: f32, y: f32, z: f32, w: f32) -> String {
     let q = PubQuaternion { x, y, z, w };
-    trans_obj_to_char(&q)
+    trans_obj_to_string(&q)
 }
 
 #[wasm_bindgen]
 #[no_mangle]
-pub extern "C" fn gen_quaternion_str_free(s: *mut c_char) {
-    destroy_c_char(s)
-}
-
-#[wasm_bindgen]
-#[no_mangle]
-pub extern "C" fn gen_obj_info_str(
-    name: *const c_char,
-    age: f32,
-    desc: *const c_char,
-) -> *mut c_char {
-    let string_name = trans_char_to_string(name);
-    let string_desc = trans_char_to_string(desc);
-
-    let obj = ObjInfo {
-        name: string_name,
-        age,
-        desc: string_desc,
-    };
-    trans_obj_to_char(&obj)
-}
-
-#[wasm_bindgen]
-#[no_mangle]
-pub extern "C" fn gen_obj_info_str_free(s: *mut c_char) {
-    destroy_c_char(s)
-}
-
-#[wasm_bindgen]
-#[no_mangle]
-pub extern "C" fn gen_obj_info(
-    name: *const c_char,
-    age: f32,
-    desc: *const c_char,
-) -> *mut PubObjInfo {
+pub extern "C" fn gen_obj_info_str(name: String, age: f32, desc: String) -> String {
     let obj = PubObjInfo { name, age, desc };
-    Box::into_raw(Box::new(obj))
-}
-
-#[wasm_bindgen]
-#[no_mangle]
-pub extern "C" fn gen_obj_info_free(ptr: *mut PubObjInfo) {
-    if ptr.is_null() {
-        return;
-    }
-    unsafe {
-        Box::from_raw(ptr);
-    }
+    trans_obj_to_string(&obj)
 }
 
 /***************************end*****************************/
@@ -129,12 +77,20 @@ fn destroy_c_char(s: *mut c_char) {
 }
 
 fn trans_obj_to_char<T>(value: &T) -> *mut c_char
-    where
-        T: ?Sized + Serialize,
+where
+    T: ?Sized + Serialize,
 {
     let str_json = serde_json::to_string(value).unwrap();
     let c_str = CString::new(str_json).unwrap();
     c_str.into_raw()
+}
+
+fn trans_obj_to_string<T>(value: &T) -> String
+where
+    T: ?Sized + Serialize,
+{
+    let str_json = serde_json::to_string(value).unwrap();
+    str_json
 }
 
 fn trans_char_to_string(char: *const c_char) -> String {
