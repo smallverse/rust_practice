@@ -1,6 +1,6 @@
 [package]
 name = "cross_rust_wasm"
-version = "0.1.1"
+version = "0.1.4"
 authors = ["Administrator <zhaijunfeng2012@gmail.com>"]
 keywords= ["wasm","test"]
 description = "cross_rust_wasm"

@@ -8,21 +8,21 @@ https://www.npmjs.com/package/cross_rust_wasm
 ## 2 use cross_rust_wasm
 nodejs：
 ```shell
-npm i rust_wasm@nodejs
+npm i cross_rust_wasm@nodejs
 ```
 
 webpack(bundler)：
 ```shell
-npm i rust_wasm@bundler
+npm i cross_rust_wasm@bundler
 ```
 
 [web:](https://rustwasm.github.io/docs/wasm-bindgen/examples/without-a-bundler.html)
 ```shell
-npm i rust_wasm@web
+npm i cross_rust_wasm@web
 ```
 [no-modules：](https://rustwasm.github.io/docs/wasm-bindgen/examples/without-a-bundler.html)
 ```shell
-npm i rust_wasm@no-modules
+npm i cross_rust_wasm@no-modules
 ```
 
 ---
