@@ -1,5 +1,6 @@
 mod utils;
 
+use serde::{Deserialize, Serialize};
 use std::ffi::{CStr, CString};
 use std::os::raw::c_char;
 use wasm_bindgen::prelude::*;
