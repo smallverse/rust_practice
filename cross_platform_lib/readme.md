@@ -1,4 +1,7 @@
 # build use cargo or [cross](https://github.com/cross-rs/cross) ,FFI By [cxx](https://github.com/dtolnay/cxx))
+
+> "CXX" is powerful but not perfect, if you want to be compatible with PC and mobile, consider "cbindgen" 
+
 > https://github.com/dtolnay/cxx/issues/1075 String gcc android 
 
 > [UE4 3rd plugin Test](https://github.com/smallverse/ue4_test), The same is true for Unity 3D, but you need to build it yourself, which is easier than UE4

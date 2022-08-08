@@ -1,4 +1,5 @@
-# build use cargo or [cross](https://github.com/cross-rs/cross) ,use FFI [cbindgen](https://github.com/eqrion/cbindgen/).
+# build use cargo or [cross](https://github.com/cross-rs/cross) ,use FFI [cbindgen](https://github.com/eqrion/cbindgen/) ---It is recommended to use.
+
 > FFI examples: https://github.com/shepmaster/rust-ffi-omnibus/tree/master/examples
 
 > http://kmdouglass.github.io/posts/complex-data-types-and-the-rust-ffi/
