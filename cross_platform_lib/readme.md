@@ -1,6 +1,6 @@
 # build use cargo or [cross](https://github.com/cross-rs/cross) ,FFI By [cxx](https://github.com/dtolnay/cxx))
 
-> "CXX" is powerful but not perfect, if you want to be compatible with PC and mobile, consider "cbindgen" 
+> "CXX" is powerful but not perfect, if you want to be compatible with PC and mobile, consider "cbindgen" [example](https://github.com/smallverse/rust_practice/tree/main/cross_platform_lib_ffi)
 
 > https://github.com/dtolnay/cxx/issues/1075 String gcc android 
 
