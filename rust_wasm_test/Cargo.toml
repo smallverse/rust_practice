@@ -1,13 +1,14 @@
 [package]
-name = "rust_wasm"
+name = "rust_wasm_test"
 version = "0.1.0"
 authors = ["Administrator <zhaijunfeng2012@gmail.com>"]
 keywords= ["wasm","test"]
-description = "rust_wasm"
+description = "rust_wasm_test"
 edition = "2021"
 
+
 [lib]
-name = "rust_wasm"
+name = "rust_wasm_test"
 crate-type = ["cdylib", "rlib"]
 
 [features]
