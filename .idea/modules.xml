@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/cross_rust_wasm/cross_rust_wasm.iml" filepath="$PROJECT_DIR$/cross_rust_wasm/cross_rust_wasm.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/rust_practice.iml" filepath="$PROJECT_DIR$/.idea/rust_practice.iml" />
       <module fileurl="file://$PROJECT_DIR$/test_bin/test_bin.iml" filepath="$PROJECT_DIR$/test_bin/test_bin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test_lib/test_lib.iml" filepath="$PROJECT_DIR$/test_lib/test_lib.iml" />
     </modules>
   </component>
 </project>

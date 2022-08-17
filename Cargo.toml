@@ -5,4 +5,5 @@ members = [
     "cross_platform_lib_jni",
     "cross_rust_wasm",
     "test_bin",
+    "test_lib",
 ]
