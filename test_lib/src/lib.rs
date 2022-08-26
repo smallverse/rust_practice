@@ -1,3 +1,4 @@
+mod ownership;
 mod shadowing;
 
 pub fn add(left: usize, right: usize) -> usize {
@@ -6,8 +7,8 @@ pub fn add(left: usize, right: usize) -> usize {
 
 #[cfg(test)]
 mod tests {
-    use crate::shadowing::{shadowing_foo, shadowing_foo1};
     use super::*;
+    use crate::shadowing::{shadowing_foo, shadowing_foo1};
 
     #[test]
     fn it_works() {

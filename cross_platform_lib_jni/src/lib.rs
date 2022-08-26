@@ -4,7 +4,7 @@ use jni::{
     sys::{jfloat, jint, jstring},
     JNIEnv,
 };
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
 #[repr(C)]
 #[derive(Debug, Serialize, Deserialize)]

@@ -3,6 +3,9 @@
   <component name="ProjectRootManager">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
+  <component name="ProjectType">
+    <option name="id" value="jpab" />
+  </component>
   <component name="XMakeProjectSettings">
     <option name="currentArchitecture" value="x86" />
     <option name="workingDirectory" value="$PROJECT_DIR$" />
