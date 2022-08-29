@@ -6,4 +6,5 @@ members = [
     "cross_rust_wasm",
     "test_bin",
     "test_lib",
+    "aw_test"
 ]
