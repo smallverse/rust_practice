@@ -1,7 +1,22 @@
+mod download_file;
+
 use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
+use reqwest::Client;
 
 #[get("/hello")]
 async fn hello() -> impl Responder {
+    HttpResponse::Ok().body("Hello world!")
+}
+
+#[get("/download")]
+async fn download() -> impl Responder {
+    let url="http://172.16.3.52:9000/publish-web/test/Sku_AJ.glb";
+    // let url = "https://releases.ubuntu.com/20.04/ubuntu-20.04.3-desktop-amd64.iso";
+
+    let re = download_file::download_file(&Client::new(), url, "Sku_AJ.glb")
+        .await
+        .unwrap();
+
     HttpResponse::Ok().body("Hello world!")
 }
 
@@ -26,7 +41,7 @@ struct AppState {
 #[get("/")]
 async fn index_app_state(data: web::Data<AppState>) -> String {
     let app_name = &data.app_name; // <- get app_name
-    format!("Hello {}!",app_name) // <- response with app_name
+    format!("Hello {}!", app_name) // <- response with app_name
 }
 
 #[actix_web::main]
@@ -34,6 +49,7 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
         App::new()
             .service(hello)
+            .service(download)
             .service(echo)
             .route("/hey", web::get().to(manual_hello))
             .service(
@@ -51,3 +67,6 @@ async fn main() -> std::io::Result<()> {
     .run()
     .await
 }
+
+
+
