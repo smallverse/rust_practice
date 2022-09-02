@@ -4,6 +4,7 @@ mod entity;
 
 use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder, Result};
 use reqwest::Client;
+use serde::Serialize;
 use ulid::Ulid;
 
 #[get("/hello")]
@@ -28,15 +29,17 @@ async fn hello_name(name: web::Path<String>) -> Result<impl Responder> {
         source_obj_url: None,
         target_obj_url: None,
     };
-    Ok(web::Json(obj))
+
+    let re=comm_base::result_vo::ResultVO::gen_success_result(&obj);
+
+    Ok(web::Json(re))
 }
 
 #[get("/download")]
 async fn download() -> impl Responder {
-    let url = "http://172.16.3.52:9000/publish-web/test/Sku_AJ.glb";
-    // let url = "https://releases.ubuntu.com/20.04/ubuntu-20.04.3-desktop-amd64.iso";
+    let url = "https://releases.ubuntu.com/20.04/ubuntu-20.04.3-desktop-amd64.iso";
 
-    let re = download_file::download_file(&Client::new(), url, "Sku_AJ.glb").await.unwrap();
+    let re = download_file::download_file(&Client::new(), url, "ubuntu-20.04.3-desktop-amd64.iso").await.unwrap();
 
     HttpResponse::Ok().body("Hello world!")
 }
