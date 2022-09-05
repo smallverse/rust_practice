@@ -30,7 +30,7 @@ async fn hello_name(name: web::Path<String>) -> Result<impl Responder> {
         target_obj_url: None,
     };
 
-    let re=comm_base::result_vo::ResultVO::gen_success_result(&obj);
+    let re=comm_base::result_vo::ResultVO::gen_success_result(obj);
 
     Ok(web::Json(re))
 }

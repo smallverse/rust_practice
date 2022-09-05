@@ -15,30 +15,30 @@ pub struct ResultVO<T> {
 }
 
 impl<T> ResultVO<T> {
-    pub fn gen_result(code: i32, msg: String, data: &T) -> ResultVO<T> {
+    pub fn gen_result(code: i32, msg: String, data: T) -> ResultVO<T> {
         ResultVO { code, msg, data }
     }
 
-    pub fn gen_success_result(data: &T) -> ResultVO<T> {
+    pub fn gen_success_result(data: T) -> ResultVO<T> {
         ResultVO {
-            code: CODE_SUCCESS.into_inner(),
-            msg: MSG_SUCCESS.into_inner().to_string(),
+            code: *CODE_SUCCESS,
+            msg: MSG_SUCCESS.to_string(),
             data,
         }
     }
 
-    pub fn gen_failed_result(data: &T) -> ResultVO<T> {
+    pub fn gen_failed_result(data: T) -> ResultVO<T> {
         ResultVO {
-            code: CODE_FAILED.into_inner(),
-            msg: MSG_FAILED.into_inner().to_string(),
+            code: *CODE_FAILED,
+            msg: MSG_FAILED.to_string(),
             data,
         }
     }
 
-    pub fn gen_error_result(data: &T) -> ResultVO<T> {
+    pub fn gen_error_result(data: T) -> ResultVO<T> {
         ResultVO {
-            code: CODE_ERROR.into_inner(),
-            msg: CODE_ERROR.into_inner().to_string(),
+            code: *CODE_ERROR,
+            msg: CODE_ERROR.to_string(),
             data,
         }
     }
